@@ -1,4 +1,4 @@
-@extends('product.layouts.app')
+@extends('product.app')
 
 @section('navbar')
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
