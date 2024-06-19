@@ -11,7 +11,7 @@ class ProductsController extends Controller
     public function index (){
         $products = Products::all();
         // dd($product);
-        return view('product.app',compact('products'));
+        return view('welcome',compact('products'));
     }
 
     public function store(Request $request){
