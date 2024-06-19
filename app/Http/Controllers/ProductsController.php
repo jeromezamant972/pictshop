@@ -10,6 +10,7 @@ class ProductsController extends Controller
     // faire une incentiation
     public function index (){
         $product = Products::all();
+        // dd($product);
         return view('product.layouts.app',compact('product'));
     }
 
