@@ -9,9 +9,9 @@ class ProductsController extends Controller
 {
     // faire une incentiation
     public function index (){
-        $product = Products::all();
+        $products = Products::all();
         // dd($product);
-        return view('product.app',compact('product'));
+        return view('product.app',compact('products'));
     }
 
     public function store(Request $request){
