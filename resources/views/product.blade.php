@@ -1,14 +1,15 @@
 @extends('product.app')
 
 @section('navbar')
-<h1>hello
-</h1>
+
 @endsection
 
- {{-- @section('content')
+ @section('main')
+ <h1>hello
+</h1>
     <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
         @foreach ( $products as $product )
-        {{-- @dd($product)
+         {{-- @dd($product) --}}
         @endforeach
         <li class="pb-3 sm:pb-4">
             <div class="flex items-center space-x-4 rtl:space-x-reverse">
@@ -29,4 +30,4 @@
             </div>
          </li>
     </ul>
-@endsection --}}
+@endsection
