@@ -11,10 +11,12 @@
 <body>
 
     <div class="container">
-        <nav>
+        <div class="nav">
             @yield('navbar')
-        </nav>
-        @yield('main')
+        </div>
+            <div class="content">
+                @yield('main')
+                </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
