@@ -43,8 +43,8 @@
     @foreach ( $products as $product )
      {{-- @dd($product) --}}
      <li >
-        <div class="flex items-center space-x-4 rtl:space-x-reverse">
-           <div class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+        <div class="flex items-center  space-x-4 p-8  rtl:space-x-reverse">
+           <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
             {{$product->name}}
             {{$product->description}}
 
@@ -53,7 +53,7 @@
               {{$product->price}}
            </div>
            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-            <a type="button" href="{{route('ajouter',$product->id)}}" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter</a>
+            <a type="button" href="{{route('ajouter',$product->id)}}" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter au panier</a>
            </div>
            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
             <a type="button" href="{{route('supprimer',$product->id)}}" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Supprimer</a>
