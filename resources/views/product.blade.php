@@ -5,7 +5,7 @@
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PictShop972</span>
       </a>
       <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -37,26 +37,31 @@
 
 @endsection
 
- @section('main')
+@section('main')
 
-    <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
-        @foreach ( $products as $product )
-         {{-- @dd($product) --}}
-        @endforeach
-        <li class="pb-3 sm:pb-4">
-            <div class="flex items-center space-x-4 rtl:space-x-reverse">
-               <div class="flex-1 min-w-0">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    {{$product->name}}
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                     {{$product->description}}
-                  </p>
-               </div>
-               <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  {{$product->price}}
-               </div>
-            </div>
-         </li>
-    </ul>
+<ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+    @foreach ( $products as $product )
+     {{-- @dd($product) --}}
+     <li >
+        <div class="flex items-center space-x-4 rtl:space-x-reverse">
+           <div class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+            {{$product->name}}
+            {{$product->description}}
+
+           </div>
+           <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+              {{$product->price}}
+           </div>
+           <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+            <a type="button" href="{{route('ajouter',$product->id)}}" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter</a>
+           </div>
+           <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+            <a type="button" href="{{route('supprimer',$product->id)}}" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Supprimer</a>
+           </div>
+
+        </div>
+     </li>
+</ul>
+    @endforeach
+
 @endsection

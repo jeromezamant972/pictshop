@@ -22,4 +22,16 @@ class ProductsController extends Controller
        ]);
        return redirect('/');
     }
+    public function update(){
+        $product=Products::updating([
+            'name'=>$request->update('name'),
+        ]);
+    }
+
+    public function delete($id){
+        $product= Products::FindOrFail($id);
+        $product->delete();
+        return redirect('/');
+
+    }
 }
